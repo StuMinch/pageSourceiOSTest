@@ -3,16 +3,6 @@ import { cloneCapabilities } from "./utils";
 // process.env.NODE_DEBUG = "request";
 const date: Date = new Date();
 const NUM_OF_INSTANCES: String | Number = process.env.WDIO_CAP_MULTIPLIER || 1;
-const baseCapability : WebDriver.Capabilities = {
-
-    platformName: 'iOS',
-    'appium:app': 'storage:f019419c-fdf2-4429-a58d-dbfa095e4b14',
-    'appium:deviceName': 'iPhone .*',
-    'sauce:options': {
-        build: process.env.SAUCE_BUILD_NAME ? process.env.SAUCE_BUILD_NAME : `sample-wdio-ts-${date.toISOString()}`,
-        tunnelIdentifier: process.env.TUNNEL_IDENTIFIER ? process.env.TUNNEL_IDENTIFIER : process.env.TUNNEL_NAME,
-    }
-}
 
 const simCapability : WebDriver.Capabilities = {
 
